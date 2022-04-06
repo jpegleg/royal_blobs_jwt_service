@@ -27,14 +27,14 @@ type Users = Arc<HashMap<String, User>>;
 pub struct User {
     pub uid: String,
     pub identity: String,
-    pub pw: String,
+    pub service_id: String,
     pub role: String,
 }
 
 #[derive(Deserialize)]
 pub struct LoginRequest {
     pub identity: String,
-    pub pw: String,
+    pub service_id: String,
 }
 
 #[derive(Serialize)]
@@ -88,7 +88,7 @@ pub async fn login_handler(users: Users, body: LoginRequest) -> WebResult<impl R
 
     match users
         .iter()
-        .find(|(_uid, user)| user.identity == body.identity && user.pw == body.pw)
+        .find(|(_uid, user)| user.identity == body.identity && user.service_id == body.service_id)
     {
         Some((uid, user)) => {
             let jwt_token = auth::create_jwt(&uid, &Role::from_str(&user.role))
@@ -140,7 +140,7 @@ fn init_users() -> HashMap<String, User> {
         User {
             uid: String::from("Hashmap instead of Identity Provider for Template"),
             identity: String::from("nobody@localhost"),
-            pw: String::from("5aae5619a4b33765800bc5f9bdd1be507fb"),
+            service_id: String::from("5aae5619a4b33765800bc5f9bdd1be507fb"),
             role: String::from("User"),
         },
     );
@@ -149,7 +149,7 @@ fn init_users() -> HashMap<String, User> {
         User {
             uid: String::from("Hashmap instead of Identity Provider for Template"),
             identity: String::from("root@localhost"),
-            pw: String::from("3ec85f59dce67fc936d7f1e63466aea3b6c"),
+            service_id: String::from("3ec85f59dce67fc936d7f1e63466aea3b6c"),
             role: String::from("Admin"),
         },
     );
