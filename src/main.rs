@@ -138,7 +138,7 @@ fn init_users() -> HashMap<String, User> {
     map.insert(
         String::from("1"),
         User {
-            uid: String::from("Hashmap instead of Identity Provider for Template"),
+            uid: String::from("Hashmap for services mapping"),
             identity: String::from("nobody@localhost"),
             service_id: String::from("5aae5619a4b33765800bc5f9bdd1be507fb"),
             role: String::from("User"),
@@ -147,7 +147,7 @@ fn init_users() -> HashMap<String, User> {
     map.insert(
         String::from("2"),
         User {
-            uid: String::from("Hashmap instead of Identity Provider for Template"),
+            uid: String::from("Hashmap for services mapping"),
             identity: String::from("root@localhost"),
             service_id: String::from("3ec85f59dce67fc936d7f1e63466aea3b6c"),
             role: String::from("Admin"),
