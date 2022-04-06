@@ -6,5 +6,5 @@ There are hard coded HMAC and identity values in the template.
 
 The service runs locally within a backend, providing JWT + BLAKE2 of JWT + blob back to the caller, logging UUID and BLAKE2 of JWT in the service.
 
-This servive is not meant to provide security by itself, but instead is to be used within a backend API.
+This service is not meant to provide security by itself, but instead is to be used within a backend API.
 
