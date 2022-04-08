@@ -55,3 +55,5 @@ The client may chose to store the data as it wishes but likely does not need to 
 
 ```HS512 JWT | BLOB```
 
+<h3>Prototype wrappers</h3>
+https://github.com/jpegleg/osprey_validator
