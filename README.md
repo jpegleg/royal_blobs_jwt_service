@@ -56,4 +56,8 @@ The client may chose to store the data as it wishes but likely does not need to 
 ```HS512 JWT | BLOB```
 
 <h3>Prototype wrappers</h3>
+
 https://github.com/jpegleg/osprey_validator
+
+This demo doesn't leverage the blob, but demos many layering techniques: https://github.com/jpegleg/osprey_validator/tree/main/docker/osprey_1
+
